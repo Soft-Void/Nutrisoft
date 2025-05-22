@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriSalud - Sistema de Gestión Nutricional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra de navegación: logo y perfil -->
+    <div class="navbar">
+        <div class="logo">
+          <i class="fas fa-apple-alt"></i><span>NutriSalud</span>
+        </div>
+        <div class="profile">
+          <a href="configuracion.php?id_nutriologo=<?= $id_n ?>">
+            <i class="fas fa-user-md"></i>
+            <span><?= htmlspecialchars($nombreNut) ?></span>
+          </a>
+        </div>
+      </div>
+      
+
+    <!-- Botón para mostrar/ocultar el sidebar -->
+    <button class="toggle-sidebar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+        <nav class="menu">
+          <div class="menu-item active"><a href="index.html"><i class="fas fa-home"></i><span>Inicio</span></a></div>
+          <div class="menu-item"><a href="pacientes.php"><i class="fas fa-users"></i><span>Pacientes</span></a></div>
+          <div class="menu-item"><a href="Citas.php"><i class="fas fa-calendar-alt"></i><span>Citas</span></a></div>
+          <div class="menu-item"><a href="Nutriologos.php"><i class="fas fa-user-md"></i><span>Nutriólogos</span></a></div>
+          <div class="menu-item"><a href="Configuracion.php"><i class="fas fa-cog"></i><span>Configuración</span></a></div>
+          
+          
+        </nav>
+      </aside>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <h1 class="page-title">Panel de Control</h1>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <i class="fas fa-users"></i>
+                    <span>Total Pacientes</span>
+                </div>
+                <div class="stat-value">248</div>
+                <div class="stat-footer"><i class="fas fa-arrow-up"></i> +12% este mes</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Citas Hoy</span>
+                </div>
+                <div class="stat-value">18</div>
+                <div class="stat-footer">4 pendientes</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Ingresos Mensuales</span>
+                </div>
+                <div class="stat-value">$12,540</div>
+                <div class="stat-footer"><i class="fas fa-arrow-up"></i> +8.3% vs mes anterior</div>
+            </div>
+        </div>
+
+        <div class="recent-activity">
+            <h2>Actividad Reciente</h2>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon"><i class="fas fa-user-plus"></i></div>
+                    <div class="activity-details">
+                        <div class="activity-title">Nuevo paciente registrado</div>
+                        <div class="activity-desc">Carlos Méndez – 42 años</div>
+                        <div class="activity-time"><i class="fas fa-clock"></i> Hace 20 minutos</div>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon"><i class="fas fa-clipboard-check"></i></div>
+                    <div class="activity-details">
+                        <div class="activity-title">Consulta completada</div>
+                        <div class="activity-desc">María López – Primera evaluación</div>
+                        <div class="activity-time"><i class="fas fa-clock"></i> Hace 1 hora</div>
+                    </div>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon"><i class="fas fa-calendar-plus"></i></div>
+                    <div class="activity-details">
+                        <div class="activity-title">Nueva cita programada</div>
+                        <div class="activity-desc">Alejandro Ruíz – Seguimiento</div>
+                        <div class="activity-time"><i class="fas fa-clock"></i> Hace 2 horas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
